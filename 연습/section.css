@@ -1,0 +1,113 @@
+
+/* section */
+
+.main-section {
+
+    display: flex;
+    width: 70%;
+    float: right;
+    /* 메인 섹션 백그라운드 영역 조정  */
+
+   background-color: red;
+
+
+    /* width: 1280px; */
+    /* width: calc(1080px); */
+
+    height: auto;
+    /* margin: 0 auto; */
+    /* padding: 20px 32px 0px 32px ; */
+    /* align-items: center; */
+
+    /* margin-top: 150px; */
+    /* margin-left: 200px; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+
+}
+
+
+.car-icons {
+    /* 카드 간격 다시 조정 */
+    width: 240px;
+    height: auto;
+    margin-top: 10px;
+    padding: 0 10px 15px 0;
+    font-size: 11px;
+    border: none;
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    /* margin-right: 16px; */
+    margin-left: 16px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    /*row로 간격을 맞춤 270px로 했더니 잘 맞으나 추후에 변동이 있을경우 여기 width 나 마진값을 바꿔야함*/
+    overflow: hidden;
+
+}
+
+section .car-icons:nth-child(4n) {
+    margin-right: 0;
+
+}
+
+.car-icons:hover {
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.411);
+
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.6);
+    transition: all .35s;
+    top: -10px;
+    left: -10px;
+
+}
+
+.car-holder {
+    width: 100%;
+    height: 200px;
+    justify-content: space-between;
+}
+
+.car-holder img {
+
+    /* display: flex; */
+    height: 100%;
+    width: 104%;
+    /* margin: auto; */
+    object-fit: cover;
+    /* margin-left: 10px; */
+
+}
+
+
+.icon-footer {
+    font-size: 15px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+.text {
+
+    padding-left: 10px;
+}
+
+.car1 {
+    font-size: 20px;
+    font-style: bold;
+    margin-top: 5px;
+}
+
+.car_table {
+
+    font-size: 12px;
+    margin: 2px 0 2px 5px;
+    border-style: none;
+    line-height: 1.5rem;
+}

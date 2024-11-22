@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+        
+        .detail_page{
+            width: 100%;
+            height: 100%;
+         justify-items: center;
+        }
+
+        /*---------------- 상세페이지 전체 설정 ----------------*/
+        .product_detail {
+            width: 1360px;
+            height: 680px;
+            display: flex;
+        }
+
+        /* ----------------상세페이지 이미지---------------- */
+        .detail_img {
+             width: 680px;  /* 원하는 너비 */
+             height: 680px; /* 원하는 높이 */
+
+        }
+        .detail_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 비율을 유지하면서 자르지 않도록 설정 */
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* ---------------- 상세페이지 설명글 ----------------*/
+        .detail_text {
+            margin-top: 20px;
+            width: 680px;
+            height: 100%;
+            margin-left: 80px;
+
+          
+        }
+
+        .detail_text_header,
+        .detail_text_header h2 {
+            width: 610px;
+            height: 45px;
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+        .detail_text_seller,
+        .detail_text_seller p {
+            width: 610px;
+            height: 25px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+        .detail_text_price {
+            width: 610px;
+            height: 25px;
+            padding: 10px 0 10px 0;
+
+        }
+
+        .ontion_inner {
+            border-top: 2px solid #B5B6B5;
+            width: 610px;
+        }
+
+        .detail_text .detail_text_save_list {
+            width: 100%;
+
+            border-collapse: collapse;
+            font-size: 12px;
+            color: #B5B6B5;
+
+            margin-bottom: 20px;
+
+        }
+
+        .detail_text .detail_text_save_list th,
+        .detail_text .detail_text_save_list td {
+            height: 20px;
+            text-align: left;
+        }
+
+        .detail_text_save_list .table_left {
+            width: 110px;
+            padding: 7px 5px 6px 0;
+        }
+
+        .detail_text_save_list .table_right {
+            width: 500px;
+            padding: 7px 6px 8px 0;
+        }
+
+        .detail_text_select_list {
+            height: 100px;
+            font-size: 10px;
+
+        }
+
+        .detail_text_select_list .select_list_title {
+
+            width: 250px;
+            padding: 20 10 20 0;
+
+        }
+
+        .detail_text_select_list .select_list_quantity {
+
+            width: 250px;
+
+            padding: 20 0;
+
+        }
+
+        .quantity_up,
+        .quantity_down {
+            display: none;
+        }
+
+        .detail_text_select_list .select_total_count {
+
+            width: 100px;
+            padding: 20 0;
+
+        }
+
+        .total_price {
+            font-size: 20px;
+            overflow: hidden;
+            width: 610px;
+        }
+
+        .price_title {
+
+            float: left;
+
+        }
+
+        .price_total {
+
+            float: right;
+
+        }
+
+        .button_detail_buy {
+            margin-top: 20px;
+            background-color: #000;
+            border-radius: 10px;
+            width: 610px;
+            height: 48px;
+            color: white;
+            font-size: 16px;
+
+        }
+        .button_detail_buy:hover{
+            background-color: rgba(0, 0, 0, 0.5); /* 배경색을 반투명하게 설정 */
+            opacity: 3; /* 전체적으로 흐려지는 효과 */
+        } 
+
+        .button_detail_buy a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: inherit;
+            font-size: 16px;
+            /* 텍스트 flex로 분리 후 가운데 가로 세로 정렬 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                    
+        }
+        
+        
+
+        .sub_button_menu {
+            padding-top: 20px;
+            height: 50px;
+            width: 610px;
+
+            display: flex;
+            justify-content: space-between;
+            /* 버튼 간 간격 조정 (옵션) */
+            align-items: center;
+            /* 수직 정렬 */
+            gap: 10px;
+            /* 버튼 간 간격 */
+        }
+
+        .like_button,
+        .basket_button,
+        .interest_product_button {
+            height: 50px;
+            border: 2px solid #B5B6B5;
+            /* border-style과 border-width를 통합 */
+            border-radius: 10px;
+            color:#B5B6B5;
+        }
+
+        .like_button:hover,
+        .basket_button:hover,
+        .interest_product_button:hover {
+            border-style: 2px solid black;
+        }
+
+        .like_button {
+            width: 100px;
+            background-color: white;
+        }
+
+        .basket_button,
+        .interest_product_button {
+            width: 250px;
+            background-color: white;
+        }
+
+        .like_button a,
+        .basket_button a,
+        .interest_product_button a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: inherit;
+            font-size: 16px;
+            /* 텍스트 flex로 분리 후 가운데 가로 세로 정렬 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .like_button:hover,
+        .basket_button:hover,
+        .interest_product_button:hover {
+            border: 2px solid black;
+            /* 주위 선만 강조 (원하는 색상으로 변경) */
+            color: black;
+            /* 글자 색상도 바꾸고 싶으면 추가 */
+            text-decoration: none;
+            /* 밑줄 없애기 (선택 사항) */
+        }
+
+
+
+    /* ----------------------상품상세설명 후기 버튼------------------ */
+    .product_detrail_description{
+        width: 1360px;
+        height: 60px;
+
+        padding-top: 60px;
+        padding-bottom: 30px;
+
+        color:#B5B6B5;
+        display: flex;
+        
+        border-bottom: 2px solid #B5B6B5;
+    }
+    .button_product_detrail_description{
+        width: 50%;
+        height: 100%;
+        
+    }
+    .button_review{
+        width: 50%;
+        height: 100%;
+    }
+    .button_product_detrail_description a,
+    .button_review a{
+        display: block;
+            width: 50%;
+            height: 100%;
+            font-size: 16px;
+            text-decoration: none;
+            color: inherit;
+            font-size: 16px;
+            /* 텍스트 flex로 분리 후 가운데 가로 세로 정렬 */
+            display: flex;
+            justify-content: right;
+            align-items: center;
+
+    }
+    
+    /* ----------------------상품상세설명란------------------ */
+
+    .text_product_detrail_description{
+        width: 1360px;
+        height: auto;
+        display: flex;
+            justify-content: right;
+            align-items: center;
+
+    }
+    .text_product_detrail_description_img{
+
+        max-width: 100%; /* 최대 너비를 100%로 설정하여 부모 요소의 크기에 맞게 확장 */
+        height: auto; /* 세로 크기는 자동으로 조정 (비율 유지) */
+        margin: 0 auto;
+        padding: 0;
+        display: block;
+        background-size: auto; /* 원본 크기 그대로 유지 */
+        background-repeat: no-repeat; /* 이미지 반복하지 않도록 설정 */
+        background-position: center; /* 이미지를 요소 중앙에 배치 */
+    }
+   </style>
+</head>
+
+<body>
+  <div class="detail_page">
+    <!-- ---------------- 상세페이지 전체 설정 ---------------- -->
+    <div class="product_detail">
+
+        <!-- ----------------상세페이지 이미지---------------- -->
+        <div class="detail_img" >
+            <img src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/product/big/202407/9767ad410bd21b9f89b2f42fe2fff2a3.jpeg" alt="">
+        </div>
+            <!-- ---------------- 상세페이지 설명글 ---------------- -->
+        <div class="detail_text">
+            <div class="detail_text_header">
+                <h2>에버튼 'BAR SCARF' 스카프 (머플러) - 오피셜</h2>
+            </div>
+            <div class="detail_text_seller">
+                <p>Official Licensed Product</p>
+            </div>
+            <div class="detail_text_price"><strong>40,000원</strong></div>
+
+            <table class="detail_text_save_list">
+                <tr>
+                    <th class="table_left">적립금</th>
+                    <th class="table_right">400원 (1%)</th>
+                </tr>
+                <tr>
+                    <td class="table_left">배송비</td>
+                    <td class="table_right">3,000원</td>
+                    </td>
+            </table>
+
+            <div class="ontion_inner">
+                <table class="detail_text_select_list">
+                    <tr>
+                        <td class="select_list_title">에버튼 'BAR SCARF' 스카프 (머플러) - 오피셜</td>
+                        <td class="select_list_quantity">
+                            <span>
+                                <input id="select_list_quantity" name="quantity_opt[]" value="1" type="text">
+                                <a href="" class="quantity_up">수량증가</a>
+                                <a href="" class="quantity_down">수량감소</a>
+                            </span>
+                        </td>
+                        <td class="select_total_count"><span>40,000원</span><br><span>(400원)</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="total_price">
+                <span class="price_title"><strong>총 상품금액</strong></span>
+                <span class="price_total"><strong>40,000원</strong><span>(1개)</span>
+            </div>
+            <button class="button_detail_buy"><a href="#">바로구매</a></button>
+
+            <div class="sub_button_menu">
+                <button class="like_button"><a href="#">좋아요</a></button>
+                <button class="basket_button"><a href="#">장바구니</a></button>
+                <button class="interest_product_button"><a href="#">관심상품</a></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------상품상세설명 후기 버튼------------------  -->
+           <div class="product_detrail_description">
+            <div class="button_product_detrail_description"><a href="#">상품상세설명</a></div>
+            <div class="button_review"><a href="#">후 기</a></div>
+        </div>
+    
+        
+     <!-- -------------상품상세설명란------------------  -->
+        <div class="text_product_detrail_description">
+            <div class="text_product_detrail_description_img"><img src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/upload/NNEditor/20240705/mobile/5e1bcab459d452e32886d90a880586b1_1720174294.jpeg" alt=""></div>
+        </div>
+
+</div>  
+</body>
+
+</html>

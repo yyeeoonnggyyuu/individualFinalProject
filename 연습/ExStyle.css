@@ -1,0 +1,27 @@
+     /* 초기설정 */
+     * {
+         list-style: none;
+         text-decoration: none;
+         border-collapse: collapse;
+         margin: 0px;
+         padding: 0px;
+         color: #000;
+         font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+     }
+
+     body {
+         /* 해더 사이드바 메인 빼고 모든 영역 백그라운드 */
+         background-color: #fffff0;
+     }
+
+     /* aside + section 하나의 div */
+     .aside_section {
+         width: 100%;
+         height: auto;
+         /* background-color: red; */
+         /* margin-top: 150px; */
+         position: sticky;
+         /* overflow: ; */
+     }
+
+     

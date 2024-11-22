@@ -1,0 +1,147 @@
+/* aside */
+
+aside {
+
+    height: auto;
+    width: 30%;
+    float: left;
+    display: inline;
+    background-color: blue;
+    overflow: hidden;
+
+    position: -webkit-sticky;
+    position: sticky;
+    align-self: flex-start;
+
+}
+
+/* aside  accordion 효과*/
+.accordion {
+    background-color: blue;
+
+    width: 30%;
+    height: auto;
+}
+
+.accordion_bar {
+    font-size: 15px;
+}
+
+input[id*="car_select"] {
+    display: none;
+
+}
+
+input[id*="car_select"]+label {
+    display: block;
+    padding: 9px;
+    border: 1px solid #DDDDDD;
+    border-bottom: 0;
+    color: #999999;
+    font-weight: 900;
+    background: #F5F5F5;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    /* border-radius: 7px; */
+
+}
+
+/* input[id*="car_select"] + label img{
+position: absolute;
+top: 63%;
+right: 10px;
+width: 16px;
+height: 16px;
+margin-top: -15px;
+display: inline-block;
+} */
+
+/* aside 화살표 방향설정  */
+input[id*="car_select"]+label i {
+    font-size: 0.rem;
+    float: right;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* 초기 상태: 0도 회전 */
+input[id*="car_select"]:checked+label i {
+    transform: rotate(180deg);
+}
+
+/* 클릭 시 180도 회전 */
+input[id*="car_select"]:not(:checked)+label i {
+    transform: rotate(0deg);
+}
+
+
+input[id*="car_select"]+label+div {
+    max-height: 0;
+    transition: all .35s;
+    overflow: hidden;
+    background: #ebf8ff;
+
+
+}
+
+input[id*="car_select"]+label+div p {
+    display: inline-block;
+    padding: 20px;
+    /* 나중에 지울 수 있음 구간 나누는데 쓰임 */
+}
+
+input[id*="car_select"]:checked+label+div {
+    max-height: 300px;
+}
+
+/* input[id*="car_select"]:checked + label em {background-position: 0 -30px;} */
+
+/* 사이드바 세부내용 추후에 수정 */
+.sidebar {
+    display: block;
+}
+
+.brand,
+.carTypeld,
+.displacement,
+.color,
+.modelYear {
+    width: 100%;
+
+    font-size: 15px;
+    padding: 10px;
+    /* display: flex;
+justify-content: space-between;
+text-align: justify; */
+    background-color: #fff;
+}
+
+.accordion_bar {
+    color: #999999;
+    font-size: 13px;
+}
+
+/* .accordion .sidebar ul li{
+position: relative;
+} */
+/* .accordion .sidebar ul li label {
+display: flex;
+} */
+.accordion .sidebar ul li label p {
+
+    margin: 0;
+    padding: 0px 0px 0px 0px;
+    width: 180px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.accordion .sidebar ul li label p:hover {
+    font-size: 18px;
+    font-style: bold;
+}
+
+.accordion .sidebar ul li:hover {
+    background-color: #9ad7ff;
+    cursor: pointer;
+}

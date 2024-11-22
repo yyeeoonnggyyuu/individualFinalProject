@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>왼쪽 사이드바, 오른쪽 게시판</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;   
+            /* text-decoration: none;
+            border-collapse: collapse; */
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;         
+        }
+
+        .container {
+            display: flex;  /* 수평 배치 */
+            width: 80%; /* 콘텐츠 영역의 너비 80% */
+            height: 100%;  /* 높이는 100%로 설정 (flex 부모로 중앙 배치) */
+        }
+
+        .left {
+            width: 20%; /* 왼쪽 영역 20% */
+            /* background-color: lightblue; */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .right {
+            width: 80%; /* 오른쪽 영역 80% */
+            /* background-color: lightgreen; */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .accordion {
+            margin-bottom: 20px;
+        }
+
+        .sidebar_category {
+            display: block;
+            padding: 10px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .sidebar_category:hover {
+            background-color: #ddd;
+        }
+
+        .sidebar_list_wrap {
+            overflow-x: auto;
+        }
+
+
+        /* board */
+        table {
+
+            border-collapse: collapse;
+        }
+        caption {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .board_list_wrap{
+            padding: 50px;
+        }
+        .board_list{
+            width: 100%;
+            border-top: 2px solid navy;
+        }
+        
+        .board_list tr {
+            border-bottom: 1px solid #ccc;
+        }
+        .board_list th,
+        .board_list td {
+            padding: 10px;
+            font-size: 24px;
+        }
+        .board_list td{
+            text-align: center;
+        }
+        
+        .board_list title:nth-child(2) {
+            text-align: left;
+        }
+        .board_list title:nth-child(2):hover {
+            text-decoration: underline;
+        }
+
+
+        /* paging */
+        .board_list_wrap .paging{
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0;
+        }
+        .board_list_wrap .paging a {
+            
+            display: inline-block;
+            margin-left: 10px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+        .board_list_wrap .paging a:first-child{
+            margin-left: 0;
+        }
+
+        .board_list_wrap .paging a .button{
+            border: 1px solid #000;
+            background: #eee;
+        }
+        .board_list_wrap .paging a .pagenum {
+            border: 1px solid #000;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 왼쪽 사이드바 -->
+        <div class="left">
+            <div class="accordion">
+                <label>커뮤니티</label>
+                <div class="sidebar">
+                    <ul>
+                        <li>
+                            <label class="sidebar_category">국내축구</label>
+                        </li>
+                        <li>
+                            <label class="sidebar_category">해외축구</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <label>판매</label>
+                <div class="sidebar">
+                    <ul>
+                        <li>
+                            <label class="sidebar_category">레플리카</label>
+                        </li>
+                        <li>
+                            <label class="sidebar_category">축구화</label>
+                        </li>
+                        <li>
+                            <label class="sidebar_category">패치</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <label>구매</label>
+                <div class="sidebar">
+                    <ul>
+                        <li>
+                            <label class="sidebar_category">레플리카</label>
+                        </li>
+                        <li>
+                            <label class="sidebar_category">축구화</label>
+                        </li>
+                        <li>
+                            <label class="sidebar_category">패치</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <label>공식몰</label>
+                <div class="sidebar">
+                    <ul>
+                        <li>
+                            <label class="sidebar_category">레플리카</label>
+                        </li>
+                        <li>
+                            <label class="sidebar_category">축구화</label>
+                        </li>
+                        <li>
+                            <label class="sidebar_category">패치</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <label>경매</label>
+            </div>
+        </div>
+
+        <!-- 오른쪽 게시판 -->
+        <div class="right">
+            <div class="board_list_wrap">
+                <table class="board_list">
+                    <caption>게시판 목록</caption>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th >제목</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="title"><a>국내축구</a></td>
+                            <td>최최최</td>
+                            <td>2024-11-20</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="title"><a>해외축구</a></td>
+                            <td>김김김</td>
+                            <td>2024-11-19</td>
+                            <td>150</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="title"><a>축구화 판매</a></td>
+                            <td>박박박</td>
+                            <td>2024-11-18</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="title"> <a>패치 판매</a></td>
+                            <td>이이이</td>
+                            <td>2024-11-17</td>
+                            <td>50</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 페이징 -->
+                <div class="paging">
+                    <a href="#" class="button">첫페이지</a>
+                    <a href="#" class="button">이전페이지</a>
+                    <a href="#" class="pagenum">1</a>
+                    <a href="#" class="pagenum">2</a>
+                    <a href="#" class="pagenum">3</a>
+                    <a href="#" class="button">다음페이지</a>
+                    <a href="#" class="button">마지막페이지</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

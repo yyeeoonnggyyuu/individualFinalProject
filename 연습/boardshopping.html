@@ -4,19 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>왼쪽 사이드바, 오른쪽 게시판</title>
+    <title>오른쪽 게시판 아이콘 형식</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             list-style: none;
-            /* text-decoration: none;
-            border-collapse: collapse; */
         }
 
         body {
-            
-            height: 100vh;
+
             width: 100%;
             justify-content: center; /* 가로 중앙 */
             align-items: center; /* 세로 중앙 */
@@ -30,11 +27,11 @@
  /* --------------베너---------------- */
 
         .Benner_list {
-            padding: 0;
-            margin: 0;
-            
-            height: 300px;
-            width: 1300px;
+
+            border-bottom: 1px solid #B5B6B5;
+
+            height: 150px;
+            width: calc(1330px);
               text-align: center; /* 가로 정렬 */
              display: flex; /* flex 컨테이너로 지정 */
               justify-content: center; /* 가로 중앙 정렬 */
@@ -49,26 +46,43 @@
             place-items: center;
         }
         .Benner_list h2 {
-            height: 100%;
-            width: 100%;
-
-            margin: 0;
-            padding: 0;
-             font-size: 100px;
+           
+             font-size: 50px;
             
+        }
+/* ------------------구단별 유니폼 찾기 버튼------------------  */
+        .select_club{
+            margin-top: 10px;
+            width: 1330px;
+            height: 20px;         
+
+        }
+        .select_club_ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .select_club li{
+
+            font-size: 11px;
+            display: inline-block;
+            color: #B5B6B5;
         }
 
   /* -----------------상품 조회수 및 상품 조회------------------ */
 
         .Product_ListMenu {
-
+            padding: 5px 0 5px 0;
             height: 50px;
-            width: 1300px;
+            width: calc(1330px);
             display: flex;
             justify-content: space-between;
-            padding-bottom: 40px;
+            
             margin: 0 auto; /* 가로 중앙 정렬 */
-
+            
         }
 
         .prdCount {
@@ -88,7 +102,7 @@
         .selArray {
             background: none;
             /* 배경 초기화 */
-            border: 1px solid #ccc;
+            border: 1px solid #B5B6B5;
             /* 필요 시 추가 */
             height: 40px;
             font-size: 14px;
@@ -105,12 +119,8 @@
 
         .container {
 
-            display: flex;
-            /* 수평 배치 */
-            /* width: 1940px; */
-            /* 콘텐츠 영역의 너비  1941px */
-            height: 100%;
-            /* 높이는 100%로 설정 (flex 부모로 중앙 배치) */
+            display: flex;  /* 수평 배치 */
+            height: 100%;  /* 높이는 100%로 설정 (flex 부모로 중앙 배치) */
             margin: 0 auto;
             justify-content: center;
         }
@@ -143,7 +153,6 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            /* max-width: 1920px; */
             max-width: calc(325px *4);
             margin: 0 auto;
             gap: 0;
@@ -270,6 +279,23 @@
         </div>
 
     </div>
+ <!-- ------------------구단별 유니폼 찾기 버튼------------------ -->
+  <div class="select_club">
+    <ul class="select_club_ul">
+        <li><a href="#">리버풀</a></li>
+        <li><a href="#">토트넘</a></li>
+        <li><a href="#">첼시</a></li>
+        <li><a href="#">아스날</a></li>
+        <li><a href="#">맨시티</a></li>
+        <li><a href="#">맨유</a></li>
+        <li><a href="#">뉴캐슬</a></li>
+        <li><a href="#">레알마드리드</a></li>
+        <li><a href="#">바르셀로나</a></li>
+        <li><a href="#">바이에른 뮌헨</a></li>
+        <li><a href="#">PSG</a></li>
+    </ul>
+  </div>
+
  <!-- ------------------상품 조회수 및 상품 조회------------------ -->
 
     <div class="Product_ListMenu">

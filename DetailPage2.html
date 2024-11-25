@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        . {
+        *{
             margin: 0;
             padding: 0;
 
         }
-        
-        .detail_page{
+
+        .detail_page {
             width: 100%;
             height: 100%;
-         justify-items: center;
+            justify-items: center;
         }
 
         /*---------------- 상세페이지 전체 설정 ----------------*/
@@ -27,27 +27,34 @@
 
         /* ----------------상세페이지 이미지---------------- */
         .detail_img {
-            
-             width: 680px; 
-             height: 680px; 
-             
+
+            width: 680px;
+            height: 680px;
+
         }
+
         .detail_img img {
-            width: 100%;  
-            height: 100%; 
-            object-fit: contain; /* 비율을 유지하면서 자르지 않도록 설정 */
-            background-size: auto; /* 원본 크기 그대로 유지 */
-             background-repeat: no-repeat; /* 이미지 반복하지 않도록 설정 */
-           background-position: center; /* 이미지를 요소 중앙에 배치 */
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* 비율을 유지하면서 자르지 않도록 설정 */
+            background-size: auto;
+            /* 원본 크기 그대로 유지 */
+            background-repeat: no-repeat;
+            /* 이미지 반복하지 않도록 설정 */
+            background-position: center;
+            /* 이미지를 요소 중앙에 배치 */
         }
+
         .d
+
         /* ---------------- 상세페이지 설명글 ----------------*/
         .detail_text {
             width: 680px;
             height: 100%;
             margin-left: 80px;
 
-          
+
         }
 
         .detail_text_header,
@@ -75,7 +82,17 @@
             padding: 10px 0 10px 0;
 
         }
+        /* -----------------사이즈 선택 --------------------- */
 
+        .product_option_size{
+            width: 100%;
+
+            padding: 10px 5px 10px;
+        }
+        .product_option_size tr{
+            height: 60px;
+            padding-bottom: 100px;
+        }
         .ontion_inner {
             border-top: 2px solid #B5B6B5;
             width: 610px;
@@ -169,10 +186,13 @@
             font-size: 16px;
 
         }
-        .button_detail_buy:hover{
-            background-color: rgba(0, 0, 0, 0.5); /* 배경색을 반투명하게 설정 */
-            opacity: 3; /* 전체적으로 흐려지는 효과 */
-        } 
+
+        .button_detail_buy:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* 배경색을 반투명하게 설정 */
+            opacity: 3;
+            /* 전체적으로 흐려지는 효과 */
+        }
 
         .button_detail_buy a {
             display: block;
@@ -187,10 +207,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-                    
+
         }
-        
-        
+
+
 
         .sub_button_menu {
             padding-top: 20px;
@@ -213,7 +233,7 @@
             border: 2px solid #B5B6B5;
             /* border-style과 border-width를 통합 */
             border-radius: 10px;
-            color:#B5B6B5;
+            color: #B5B6B5;
         }
 
         .like_button:hover,
@@ -264,31 +284,34 @@
 
 
 
-    /* ----------------------상품상세설명 후기 버튼------------------ */
-    .product_detrail_description{
-        width: 1360px;
-        height: 60px;
+        /* ----------------------상품상세설명 후기 버튼------------------ */
+        .product_detrail_description {
+            width: 1360px;
+            height: 60px;
 
-        padding-top: 60px;
-        padding-bottom: 60px;
+            padding-top: 60px;
+            padding-bottom: 60px;
 
-        color:#B5B6B5;
-        display: flex;
-        
-        border-bottom: 2px solid #B5B6B5;
-    }
-    .button_product_detrail_description{
-        width: 50%;
-        height: 100%;
-        
-    }
-    .button_review{
-        width: 50%;
-        height: 100%;
-    }
-    .button_product_detrail_description a,
-    .button_review a{
-        display: block;
+            color: #B5B6B5;
+            display: flex;
+
+            border-bottom: 2px solid #B5B6B5;
+        }
+
+        .button_product_detrail_description {
+            width: 50%;
+            height: 100%;
+
+        }
+
+        .button_review {
+            width: 50%;
+            height: 100%;
+        }
+
+        .button_product_detrail_description a,
+        .button_review a {
+            display: block;
             width: 50%;
             height: 100%;
             font-size: 16px;
@@ -300,105 +323,133 @@
             justify-content: right;
             align-items: center;
 
-    }
-    
-    /* ----------------------상품상세설명란------------------ */
+        }
 
-    .text_product_detrail_description{
-        width: 1360px;
-        height: auto;
-        display: flex;
+        /* ----------------------상품상세설명란------------------ */
+
+        .text_product_detrail_description {
+            width: 1360px;
+            height: auto;
+            display: flex;
             justify-content: right;
             align-items: center;
 
-    }
-    .text_product_detrail_description_img{
+        }
 
-        max-width: 100%; /* 최대 너비를 100%로 설정하여 부모 요소의 크기에 맞게 확장 */
-        height: auto; /* 세로 크기는 자동으로 조정 (비율 유지) */
-        margin: 0 auto;
-        padding: 0;
-        display: block;
-        background-size: auto; /* 원본 크기 그대로 유지 */
-        background-repeat: no-repeat; /* 이미지 반복하지 않도록 설정 */
-        background-position: center; /* 이미지를 요소 중앙에 배치 */
-    }
-   </style>
+        .text_product_detrail_description_img {
+
+            max-width: 100%;
+            /* 최대 너비를 100%로 설정하여 부모 요소의 크기에 맞게 확장 */
+            height: auto;
+            /* 세로 크기는 자동으로 조정 (비율 유지) */
+            margin: 0 auto;
+            padding: 0;
+            display: block;
+            background-size: auto;
+            /* 원본 크기 그대로 유지 */
+            background-repeat: no-repeat;
+            /* 이미지 반복하지 않도록 설정 */
+            background-position: center;
+            /* 이미지를 요소 중앙에 배치 */
+        }
+    </style>
 </head>
 
 <body>
-  <div class="detail_page">
-    <!-- ---------------- 상세페이지 전체 설정 ---------------- -->
-    <div class="product_detail">
+    <div class="detail_page">
+        <!-- ---------------- 상세페이지 전체 설정 ---------------- -->
+        <div class="product_detail">
 
-        <!-- ----------------상세페이지 이미지---------------- -->
-        <div class="detail_img" >
-            <img src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/product/big/202404/35b52732a4971e965f2ce448033d881a.jpg" alt="">
-        </div>
-
-        <!-- ---------------- 상세페이지 설명글 ---------------- -->
-        <div class="detail_text">
-            <div class="detail_text_header">
-                <h2>에버튼 'BAR SCARF' 스카프 (머플러) - 오피셜</h2>
+            <!-- ----------------상세페이지 이미지---------------- -->
+            <div class="detail_img">
+                <img src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/product/big/202404/35b52732a4971e965f2ce448033d881a.jpg"
+                    alt="">
             </div>
-            <div class="detail_text_seller">
-                <p>Official Licensed Product</p>
-            </div>
-            <div class="detail_text_price"><strong>40,000원</strong></div>
 
-            <table class="detail_text_save_list">
-                <tr>
-                    <th class="table_left">적립금</th>
-                    <th class="table_right">400원 (1%)</th>
-                </tr>
-                <tr>
-                    <td class="table_left">배송비</td>
-                    <td class="table_right">3,000원</td>
-                    </td>
-            </table>
+            <!-- ---------------- 상세페이지 설명글 ---------------- -->
+            <div class="detail_text">
+                <div class="detail_text_header">
+                    <h2>에버튼 'BAR SCARF' 스카프 (머플러) - 오피셜</h2>
+                </div>
+                <div class="detail_text_seller">
+                    <p>Official Licensed Product</p>
+                </div>
+                <div class="detail_text_price"><strong>40,000원</strong></div>
 
-            <div class="ontion_inner">
-                <table class="detail_text_select_list">
+                <table class="detail_text_save_list">
                     <tr>
-                        <td class="select_list_title">에버튼 'BAR SCARF' 스카프 (머플러) - 오피셜</td>
-                        <td class="select_list_quantity">
-                            <span>
-                                <input id="select_list_quantity" name="quantity_opt[]" value="1" type="text">
-                                <a href="" class="quantity_up">수량증가</a>
-                                <a href="" class="quantity_down">수량감소</a>
-                            </span>
-                        </td>
-                        <td class="select_total_count"><span>40,000원</span><br><span>(400원)</span></td>
+                        <th class="table_left">적립금</th>
+                        <th class="table_right">400원 (1%)</th>
                     </tr>
+                    <tr>
+                        <td class="table_left">배송비</td>
+                        <td class="table_right">3,000원</td>
+                        </td>
                 </table>
-            </div>
-            <div class="total_price">
-                <span class="price_title"><strong>총 상품금액</strong></span>
-                <span class="price_total"><strong>40,000원</strong><span>(1개)</span>
-            </div>
-            <button class="button_detail_buy"><a href="#">바로구매</a></button>
 
-            <div class="sub_button_menu">
-                <button class="like_button"><a href="#">좋아요</a></button>
-                <button class="basket_button"><a href="#">장바구니</a></button>
-                <button class="interest_product_button"><a href="#">관심상품</a></button>
+                <div>
+                    <table class="product_option_table">
+                        <tr>
+                            사이즈 (한국)
+                        </tr>
+                        <tr>
+                            <select class="product_option_size" option_style="select" >
+                                <option value="*" selected="" link_image="">- [필수] 옵션을 선택해 주세요 -</option>
+                                <option value="**" disabled="" link_image="">-------------------</option>
+                                <option value="P0000EZN000A" link_image="">S (95) [품절]</option>
+                                <option value="P0000EZN000B" link_image="">M (100) [품절]</option>
+                                <option value="P0000EZN000C" link_image="">L (105) [품절]</option>
+                                <option value="P0000EZN000D" link_image="">XL (110) [품절]</option>
+                                <option value="P0000EZN000I" link_image="">XXL (115) [품절]</option>
+                            </select>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="ontion_inner">
+                    <table class="detail_text_select_list">
+                        <tr>
+                            <td class="select_list_title">에버튼 'BAR SCARF' 스카프 (머플러) - 오피셜</td>
+                            <td class="select_list_quantity">
+                                <span>
+                                    <input id="select_list_quantity" name="quantity_opt[]" value="1" type="text">
+                                    <a href="" class="quantity_up">수량증가</a>
+                                    <a href="" class="quantity_down">수량감소</a>
+                                </span>
+                            </td>
+                            <td class="select_total_count"><span>40,000원</span><br><span>(400원)</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="total_price">
+                    <span class="price_title"><strong>총 상품금액</strong></span>
+                    <span class="price_total"><strong>40,000원</strong><span>(1개)</span>
+                </div>
+                <button class="button_detail_buy"><a href="#">바로구매</a></button>
+
+                <div class="sub_button_menu">
+                    <button class="like_button"><a href="#">좋아요</a></button>
+                    <button class="basket_button"><a href="#">장바구니</a></button>
+                    <button class="interest_product_button"><a href="#">관심상품</a></button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- ----------상품상세설명 후기 버튼------------------  -->
-           <div class="product_detrail_description">
+        <!-- ----------상품상세설명 후기 버튼------------------  -->
+        <div class="product_detrail_description">
             <div class="button_product_detrail_description"><a href="#">상품상세설명</a></div>
             <div class="button_review"><a href="#">후 기</a></div>
         </div>
-    
-        
-     <!-- -------------상품상세설명란------------------  -->
+
+
+        <!-- -------------상품상세설명란------------------  -->
         <div class="text_product_detrail_description">
-            <div class="text_product_detrail_description_img"><img src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/upload/NNEditor/20240410/E1848BE185A5E18489E185A6E186ABE18490E185B5E186A820E1848BE185A5E1848BE185B0E1848BE185B5.jpg" alt=""></div>
+            <div class="text_product_detrail_description_img"><img
+                    src="https://cafe24.poxo.com/ec01/enemy0000/fYw07Q+e08011Z5Qzbz300jECh5aaMmmDMQ7QH7NAQ9NK2EXhqgvmfbzfda0mDNO/Jp2ZgYE1irrrDpzeiP8fA==/_/web/upload/NNEditor/20240410/E1848BE185A5E18489E185A6E186ABE18490E185B5E186A820E1848BE185A5E1848BE185B0E1848BE185B5.jpg"
+                    alt=""></div>
         </div>
 
-</div>  
+    </div>
 </body>
 
 </html>

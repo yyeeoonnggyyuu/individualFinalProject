@@ -15,6 +15,8 @@
 
         body {
 
+             margin-top: 215px;
+
             height: auto;
             width: 100%;
             justify-content: center;  /* 가로 중앙 */
@@ -28,9 +30,7 @@
 
         /* --------------베너---------------- */
 
-        .Benner_list {
-
-            border-bottom: 1px solid #B5B6B5;
+        .Benner_list {   
             height: 300px;
             width: 100%;
             max-width: 1330px;
@@ -71,6 +71,15 @@
             font-size: 11px;
             display: inline-block;
             color: #B5B6B5;
+        }
+        .select_club_ul a.active{
+
+            color: black;
+            font-weight: bold;
+        }
+        .select_club_ul a:hover{
+            color: black;
+            font-weight: bold;
         }
         /* -----------------상품 조회수 및 상품 조회------------------ */
 
@@ -336,6 +345,35 @@
         <li><a href="#">PSG</a></li>
     </ul>
   </div>
+
+  <script>
+    document.querySelectorAll('.select_club_ul li a').forEach(function(li){
+    
+        li.addEventListener('click', function(event){
+            document.querySelectorAll('select_club_ul a').forEach(function(li){
+                item.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+
+
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     const menuItems = document.querySelectorAll(".select_club_ul li a");
+    //     const currentPath = window.location.pathname;
+
+    //     menuItems.forEach(function(link) {
+    //         const li = link.parentElement;
+
+    //         if (link.getAttribute('href') === currentPath) {
+    //             li.classList.add("active");s
+    //         }
+    //     });
+    // });
+
+  
+  
+    </script>
     <!-- ------------------상품 조회수 및 상품 조회------------------ -->
 
     <div class="Product_ListMenu">
